@@ -42,7 +42,7 @@ h2 {
 .large-text {
     font-size: 24px;
 }
-.fake-button {
+.fake-button, .clicked {
     background-color: #E5AF42;
 }
 a {
