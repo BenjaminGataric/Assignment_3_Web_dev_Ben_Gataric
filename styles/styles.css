@@ -42,6 +42,11 @@ h2 {
 .large-text {
     font-size: 24px;
 }
+.fake-button {
+    border: solid black 1px;
+    line-height: 3 3 3;
+    text-align: center;
+}
 .fake-button, .clicked {
     background-color: #E5AF42;
 }
@@ -128,16 +133,15 @@ header h1 {
 .about-us p {
     margin-bottom: 12px;
 }
-.fake-button {
-    width: 250px;
-    padding: 20px 0;
-    border: solid black 1px;
-}
 .flex .fake-button {
     text-align: center;
     margin-left: 150px;
     margin: auto;
+    width: 250px;
+    padding: 20px 0;
+   
 }
+
 
 
 
