@@ -202,26 +202,15 @@ li {
     margin: auto;
     text-align: center;
 }
-.contact .flex {
+.contact form {
+    display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
     align-items: center;
 }
-label {
-    flex: 1 0 1;
-    width: 150px;
-    margin-right: 24px;
-    text-align: right;
-}
-input, textarea{
-    flex: 1;
-    border: solid black 1px;
-    width: 300px;
-    margin-top: 24px;
+.contact .flex {
+    width: 474px;
+    justify-content: center;
     margin-bottom: 24px;
 }
-textarea {
-    height: 300px;
-}
+
 
