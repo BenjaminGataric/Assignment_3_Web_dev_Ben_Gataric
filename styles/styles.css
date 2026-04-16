@@ -42,24 +42,23 @@ h2 {
 .large-text {
     font-size: 24px;
 }
-.fake-button {
+.fake-button, .small-button, li{
     border: solid black 1px;
+}
+.fake-button {
     line-height: 3 3 3;
     text-align: center;
 }
-.fake-button, .clicked {
-    background-color: #E5AF42;
+a, header a:hover, footer a:hover{
+    color: black;
 }
 a {
     text-decoration: none;
-    color: black;
 }
-header a:hover, footer a:hover {
+header a:hover, footer a:hover, .fake-button:hover, .blue-hover:hover {
     text-decoration: underline;
-    color: black;
 }
 .fake-button:hover, .blue-hover:hover {
-    text-decoration: underline;
     background-color: cornflowerblue;
     color: white;
     cursor: pointer;
@@ -74,7 +73,7 @@ header a:hover, footer a:hover {
     - there will be 25px of space between the header and main, and 50px of space between main and footer.
     - the footer will be 60px tall, have a font-weight of 200, and the text within will be centered vertically and horizontally.
 */
-header, footer {
+header, footer, .fake-button, .clicked {
     background-color: #E5AF42;
 }
 header {
@@ -87,7 +86,6 @@ footer {
     font-weight: 200;
 }
 footer p {
-    margin: auto;
     text-align: center;
 }
 header img {
@@ -99,9 +97,8 @@ header img {
 }
 header .flex {
     align-items: center;
-    margin: auto;
 }
-header h1 {
+header h1, header .flex, .flex .fake-button, .booking-page, .booking-page .fake-button, .contact {
     margin: auto;
 }
 
@@ -136,7 +133,6 @@ header h1 {
 .flex .fake-button {
     text-align: center;
     margin-left: 150px;
-    margin: auto;
     width: 250px;
     padding: 20px 0;
    
@@ -160,7 +156,6 @@ header h1 {
 */
 .booking-page {
     width: 600px;
-    margin: auto;
     text-align: center;
 }
 .booking-page p li {
@@ -168,9 +163,6 @@ header h1 {
 }
 .booking-page .flex {
     justify-content: center;
-}
-.small-button, li {
-    border: solid black 1px;
 }
 .small-button {
     padding: 5px;
@@ -185,7 +177,6 @@ li {
 }
 .booking-page .fake-button {
     width: 200px;
-    margin: auto;
     margin-bottom: 50px;
     padding: 12px;
 }
@@ -199,7 +190,6 @@ li {
 */
 .contact {
     height: 420px;
-    margin: auto;
     text-align: center;
 }
 .contact .flex {
