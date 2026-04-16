@@ -8,58 +8,58 @@ const dayButtons = document.querySelectorAll(".day-selector li");
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
 // added challenge: don't update the dayCounter if the same day is clicked more than once. hint: .classList.contains() might be helpful here!
-dayButtons.forEach(button => {
-    button.addEventListener("click", () => {
+dayButtons.forEach(function(button) {
+    button.addEventListener("click", function() {
         if (!button.classList.contains("clicked")) {
             button.classList.add("clicked");
             numberOfDays++;
-        } else {
-            numberOfDays == numberOfDays;
+        } else if (button.classList.contains("clicked")) {
+            numberOfDays = numberOfDays;
         }
         calculateCost();
-    })
+    });
 });
 
 /********* clear days *********/
 // when the clear-button is clicked, the "clicked" class is removed from all days, any other relevant variables are reset, and the calculated cost is set to 0.
 const clearButton = document.getElementById("clear-button");
 
-clearButton.addEventListener("click", () => {
-    dayButtons.forEach(button => {
+clearButton.addEventListener("click", function() {
+    dayButtons.forEach(function(button) {
         button.classList.remove("clicked");
     });
     numberOfDays = 0;
-    calculateCost()
-})
+    calculateCost();
+});
 
 /********* change rate *********/
 // when the half-day button is clicked, set the daily rate to $20, add the "clicked" class to the "half" element, remove it from the "full" element, and recalculate the total cost.
 let dayCost = 35;
-const halfButton = document.getElementById("half")
-halfButton.addEventListener("click", () => {
+const halfButton = document.getElementById("half");
+halfButton.addEventListener("click", function() {
     dayCost = 20;
     fullButton.classList.remove("clicked");
     halfButton.classList.add("clicked");
-    calculateCost()
-})
+    calculateCost();
+});
 
 // when the full-day button is clicked, the daily rate is set back to $35, the clicked class is added to "full" and removed from "half", and the total cost is recalculated.
-const fullButton = document.getElementById("full")
-fullButton.addEventListener("click", () => {
+const fullButton = document.getElementById("full");
+fullButton.addEventListener("click", function() {
     dayCost = 35;
     halfButton.classList.remove("clicked");
     fullButton.classList.add("clicked");
-    calculateCost()
-})
+    calculateCost();
+});
 
 /********* calculate *********/
 // when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
 const costElement = document.getElementById("calculated-cost");
 function calculateCost() {
-    const costTotal = (dayCost ?? 0) * (numberOfDays ?? 0);
+    const costTotal = dayCost * numberOfDays;
     if (costElement) {
         costElement.textContent = costTotal;
     }
     return costTotal;
 }
-calculateCost()
+calculateCost();
