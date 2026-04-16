@@ -208,7 +208,7 @@ li {
     margin-left: 245px;
     margin-bottom: 24px;
 }
-label, input, textarea {
+.contact label, input, textarea, button {
     font-family: inherit;
     line-height: 24px;
     font-size: 16px;
@@ -218,10 +218,14 @@ label {
     text-align: right;
     margin-right: 24px;
 }
-input, textarea {
+.contact button, input, textarea {
     width: 300px;
 }
 textarea {
     height: 150px;
+}
+.contact button {
+    margin-left: 190px;
+    padding: 12px;
 }
 
