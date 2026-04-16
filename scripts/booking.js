@@ -2,23 +2,19 @@
 // useful variables might be: the cost per day, the number of days selected, and elements on the screen that will be clicked or will need to be modified. 
 // Do any of these variables need to be initialized when the page is loaded? 
 // When do they need to be reset or updated?
-let dayCost = 35;
 let numberOfDays = 0;
 const dayButtons = document.querySelectorAll(".day-selector li");
-const costElement = document.getElementById("calculated-cost");
-const halfButton = document.getElementById("half")
-const fullButton = document.getElementById("full")
 
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
 // added challenge: don't update the dayCounter if the same day is clicked more than once. hint: .classList.contains() might be helpful here!
 dayButtons.forEach(button => {
     button.addEventListener("click", () => {
-        button.classList.toggle("clicked");
-        if (button.classList.contains("clicked")) {
+        if (!button.classList.contains("clicked")) {
+            button.classList.add("clicked");
             numberOfDays++;
         } else {
-            numberOfDays--;
+            numberOfDays == numberOfDays;
         }
         calculateCost();
     })
@@ -38,6 +34,8 @@ clearButton.addEventListener("click", () => {
 
 /********* change rate *********/
 // when the half-day button is clicked, set the daily rate to $20, add the "clicked" class to the "half" element, remove it from the "full" element, and recalculate the total cost.
+let dayCost = 35;
+const halfButton = document.getElementById("half")
 halfButton.addEventListener("click", () => {
     dayCost = 20;
     fullButton.classList.remove("clicked");
@@ -46,6 +44,7 @@ halfButton.addEventListener("click", () => {
 })
 
 // when the full-day button is clicked, the daily rate is set back to $35, the clicked class is added to "full" and removed from "half", and the total cost is recalculated.
+const fullButton = document.getElementById("full")
 fullButton.addEventListener("click", () => {
     dayCost = 35;
     halfButton.classList.remove("clicked");
@@ -55,7 +54,12 @@ fullButton.addEventListener("click", () => {
 
 /********* calculate *********/
 // when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
+const costElement = document.getElementById("calculated-cost");
 function calculateCost() {
-    const costTotal = dayCost * numberOfDays;
-    costElement.innerHTML = costTotal;
+    const costTotal = (dayCost ?? 0) * (numberOfDays ?? 0);
+    if (costElement) {
+        costElement.textContent = costTotal;
+    }
+    return costTotal;
 }
+calculateCost()

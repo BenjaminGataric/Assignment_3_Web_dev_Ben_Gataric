@@ -2,8 +2,10 @@
 const submitButton = document.getElementById("submit-button")
 submitButton.addEventListener("click", () => {
     const contactPage = document.querySelector("#contact-page")
-    contactPage.innerHTML = "<p>Thank you for your message!</p>"
-    contactPage.querySelector("p").style.fontSize = "24px"
+    const thankYouMessage = document.createElement("p");
+    thankYouMessage.textContent = "Thank you for your message!";
+    thankYouMessage.style.fontSize = "24px";
+    contactPage.replaceChildren(thankYouMessage);
 })
 // hint: you can change the style of an element by modifying the value of that element's .style.fontSize, or by updating its .classList.
 
